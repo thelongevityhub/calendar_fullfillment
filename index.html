@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ตารางเวร สิงหาคม 2569 (ลิซ่า 😈)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --cream:#f7f0df;
+    --pink:#FFE4E9;
+    --peach:#FFD9C7;
+    --sky:#DCEEFB;
+    --mint:#DFF5E3;
+    --red:#FF7A7A;
+    --red-dark:#E85C5C;
+    --ink:#4A3F3B;
+    --ink-soft:#8A7F7A;
+    --lisa:#F2A6B4;
+    --munee:#8FC9DE;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:28px 16px 60px;
+    background:#f7f0df;
+    font-family:'Kanit', sans-serif;
+    color:var(--ink);
+  }
+  .wrap{max-width:1100px;margin:0 auto;}
+  .title-card{
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .title-card h1{
+    font-size:28px;
+    font-weight:700;
+    margin:0 0 4px;
+    color:#802424;
+  }
+  .title-card p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+  .toolbar{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:14px;
+    flex-wrap:wrap;
+  }
+  .toolbar button{
+    font-family:'Kanit', sans-serif;
+    font-size:13px;
+    font-weight:600;
+    border:none;
+    border-radius:999px;
+    padding:9px 18px;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(180,140,130,0.15);
+  }
+  .btn-save{background:#802424;color:#fff;}
+  .btn-save:hover{background:#c1546a;}
+  .btn-add{background:#fff;color:#802424;border:1.5px solid #802424;}
+  .btn-add:hover{background:#FFF0F2;}
+  .toolbar-hint{
+    text-align:center;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin:18px 0 26px;
+    font-size:12.5px;
+  }
+  .legend span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#fff;
+    padding:6px 12px;
+    border-radius:999px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.06);
+  }
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
+  .dot.work{background:var(--sky);border:1.5px solid #7FB8DE;}
+  .dot.wfh{background:var(--mint);border:1.5px solid #6FC28A;}
+  .dot.off{background:var(--red);}
+  .dot.leave{background:var(--red-dark);}
+  .people{
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    margin-bottom:18px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .people b{color:var(--ink);}
+  .avatar{
+    display:inline-block;
+    width:16px;height:16px;
+    border-radius:50%;
+    vertical-align:-3px;
+    margin-right:4px;
+  }
+  .avatar.lisa{background:var(--lisa);}
+  .avatar.munee{background:var(--munee);}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    gap:8px;
+  }
+  .dayname{
+    text-align:center;
+    font-weight:600;
+    font-size:12.5px;
+    color:#802424;
+    padding-bottom:4px;
+  }
+  .cell{
+    background:#fff;
+    border-radius:14px;
+    padding:8px;
+    min-height:118px;
+    box-shadow:0 2px 6px rgba(180,140,130,0.10);
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+  }
+  .cell.empty{
+    background:transparent;
+    box-shadow:none;
+  }
+  .cell.weekend{
+    background:#FFF6EE;
+  }
+  .datenum{
+    font-weight:700;
+    font-size:14px;
+    color:var(--ink);
+    margin-bottom:2px;
+  }
+  .pill{
+    border-radius:9px;
+    padding:5px 7px;
+    font-size:11px;
+    line-height:1.35;
+    cursor:pointer;
+    position:relative;
+    transition:filter .15s ease;
+  }
+  .pill:hover{filter:brightness(0.96);}
+  .pill:hover::after{
+    content:"คลิก = สลับสถานะ";
+    position:absolute;
+    top:-20px;
+    right:0;
+    background:#4A3F3B;
+    color:#fff;
+    font-size:9px;
+    padding:2px 6px;
+    border-radius:5px;
+    white-space:nowrap;
+    z-index:5;
+  }
+  .pill .name{
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+  .pill .time{
+    font-weight:500;
+    margin-top:1px;
+    outline:none;
+    border-radius:4px;
+    padding:1px 2px;
+  }
+  .pill .time:focus{background:rgba(255,255,255,0.55);}
+  .pill .note{
+    font-size:9.5px;
+    opacity:0.85;
+    margin-top:1px;
+    font-style:italic;
+    outline:none;
+    border-radius:4px;
+    padding:1px 2px;
+  }
+  .pill .note:focus{background:rgba(255,255,255,0.55);}
+  .pill .note:empty::before{
+    content:"+ เพิ่มหมายเหตุ";
+    opacity:0.6;
+  }
+  .pill.work{background:var(--sky);color:#2C5D7C;}
+  .pill.wfh{background:var(--mint);color:#2C6B3F;}
+  .pill.off{background:var(--red);color:#fff;}
+  .pill.leave{background:var(--red-dark);color:#fff;}
+
+  .note-box{
+    max-width:1100px;
+    margin:26px auto 0;
+    background:#fff;
+    border-radius:14px;
+    padding:14px 18px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    box-shadow:0 2px 6px rgba(180,140,130,0.08);
+    outline:none;
+  }
+  .note-box b{color:#802424;}
+
+  @media (max-width:720px){
+    .grid{grid-template-columns:repeat(7, minmax(0,1fr));gap:5px;}
+    .cell{min-height:150px;padding:6px;border-radius:10px;}
+    .pill{font-size:9.5px;padding:4px 5px;}
+    .datenum{font-size:12px;}
+    .dayname{font-size:10.5px;}
+    .pill:hover::after{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="title-card">
+<h1>🗓️ ตารางเวร — สิงหาคม 2569 (ลิซ่า 😈)</h1>
+
+</div>
+<div class="people"><span><span class="avatar lisa"></span><b>ลิซ่า 😈</b></span></div>
+<div class="legend">
+<span><span class="dot work"></span> ทำงานปกติ</span>
+<span><span class="dot wfh"></span> WFH</span>
+<span><span class="dot off"></span> หยุด</span>
+<span><span class="dot leave"></span> ลา</span>
+</div>
+<div class="grid" id="calendar-grid"><div class="dayname">จันทร์</div><div class="dayname">อังคาร</div><div class="dayname">พุธ</div><div class="dayname">พฤหัสบดี</div><div class="dayname">ศุกร์</div><div class="dayname">เสาร์</div><div class="dayname">อาทิตย์</div><div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell weekend"><div class="datenum">1</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell weekend"><div class="datenum">2</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–18:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">3</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"><br/></div></div></div><div class="cell"><div class="datenum">4</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–15:00</div><div class="note">ใช้ชด 2 ชม. จากวันนับสต๊อก 2 วัน</div></div></div><div class="cell"><div class="datenum">5</div><div class="pill leave"><div class="name">😈 ลิซ่า</div><div class="time">ลาป่วย</div><div class="note">มีใบรับรองแพทย์</div></div></div><div class="cell"><div class="datenum">6</div><div class="pill leave"><div class="name">😈 ลิซ่า</div><div class="time">ลาป่วย</div><div class="note">มีใบรับรองแพทย์</div></div></div><div class="cell"><div class="datenum">7</div><div class="pill leave"><div class="name">😈 ลิซ่า</div><div class="time">ลาป่วย</div><div class="note">มีใบรับรองแพทย์</div></div></div><div class="cell weekend"><div class="datenum">8</div><div class="pill leave"><div class="name">😈 ลิซ่า</div><div class="time">ลา (รวบ 3 วัน)</div><div class="note">ใช้วันหยุดรวบ</div></div></div><div class="cell weekend"><div class="datenum">9</div><div class="pill leave"><div class="name">😈 ลิซ่า</div><div class="time">ลา (รวบ 3 วัน)</div><div class="note">ใช้วันหยุดรวบ</div></div></div><div class="cell"><div class="datenum">10</div><div class="pill leave"><div class="name">😈 ลิซ่า</div><div class="time">ลา (รวบ 3 วัน)</div><div class="note">ใช้วันหยุดรวบ</div></div></div><div class="cell"><div class="datenum">11</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–17:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">12</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">13</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">14</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–17:00</div><div class="note"></div></div></div><div class="cell weekend"><div class="datenum">15</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell weekend"><div class="datenum">16</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–18:00</div><div class="note">มาทำงาน</div></div></div><div class="cell"><div class="datenum">17</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–17:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">18</div><div class="pill off"><div class="name">😈 ลิซ่า</div><div class="time">หยุด</div><div class="note">วันหยุดปกติ</div></div></div><div class="cell"><div class="datenum">19</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">20</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">21</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell weekend"><div class="datenum">22</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell weekend"><div class="datenum">23</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–18:00</div><div class="note">มาทำงาน</div></div></div><div class="cell"><div class="datenum">24</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–17:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">25</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–17:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">26</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">27</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell"><div class="datenum">28</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–19:00</div><div class="note"></div></div></div><div class="cell weekend"><div class="datenum">29</div><div class="pill off"><div class="name">😈 ลิซ่า</div><div class="time">หยุด</div><div class="note">วันหยุดปกติ</div></div></div><div class="cell weekend"><div class="datenum">30</div><div class="pill off"><div class="name">😈 ลิซ่า</div><div class="time">หยุด</div><div class="note">วันหยุดปกติ</div></div></div><div class="cell"><div class="datenum">31</div><div class="pill work"><div class="name">😈 ลิซ่า</div><div class="time">10:00–17:00</div><div class="note"></div></div></div></div>
+<div class="note-box">
+<b>สรุปชั่วโมงทำงานเดือนสิงหาคม:</b><br/>
+😈 ลิซ่า รวม <b>~179 ชม.</b> ตลอดเดือน
+<br/><br/>
+<b>⏱️ เทียบฐานวันละ 8 ชม. — วันที่ขาด/เกิน (สำหรับหักลบชั่วโมง):</b><br/>
+สุทธิทั้งเดือน <b>เกิน +3 ชม.</b><br/>
+  • <b>4 ส.ค. ขาด 3 ชม.</b> (ทำ 10:00–15:00 = 5 ชม. — แต่มีโน้ตว่าใช้ชดจากวันนับสต๊อก 2 ชม.แล้ว เหลือขาดจริงประมาณ 1 ชม.)<br/>
+  • วันกะสั้น 7 ชม. (ขาดวันละ 1 ชม.): 11, 14, 17, 24, 25, 31 ส.ค.<br/>
+  • วันกะยาว 9 ชม. (เกินวันละ 1 ชม.): 1, 3, 12, 13, 15, 19, 20, 21, 22, 26, 27, 28 ส.ค.<br/>
+  <span style="font-size:11px;">↳ วิธีหักลบ: กะสั้น 6 วัน × -1 = -6 ชม. / กะยาว 12 วัน × +1 = +12 ชม. → หักกันเหลือ +6 ชม. จากนั้นหักวันที่ 4 ส.ค. (-3 ชม.) → สุทธิ +3 ชม.</span><br/>
+<i>สรุป: สุทธิเกิน +3 ชม. สามารถขอ OT ได้</i>
+<br/><br/>
+<b>⚠️ วันทำงานติดต่อกันยาว (ควรตรวจสอบ):</b><br/>
+19–28 ส.ค. ทำงานติดต่อกัน <b>10 วัน</b> ไม่มีวันหยุดเลย และ 11–17 ส.ค. ติดกันอีก <b>7 วัน</b><br/>
+<i>ไหวไหม? ฝากตัวเองพิจารณาดูว่าจัดการร่างกาย/พลังงานไหวหรือเปล่า ถ้าไม่ไหวลองคุยขอจัดสลับวันหยุดให้เหมาะสมกว่านี้</i></div>
+</div>
+</body></html>
